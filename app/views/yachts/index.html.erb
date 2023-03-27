@@ -1,8 +1,14 @@
 <div class="container">
-  <div class="card-body">
-   <h1>coucou</h1>
+  <h1>Choisiez votre Yacht</h1>
     <% @yachts.each do |yacht|%>
-      <%= yacht.name%>
+      <div class="card" style="width: 18rem;">
+        <%= cl_image_tag yacht.photo.key, class: "card-img-top" %>
+        <div class="card-body">
+          <h5 class="card-title"><%= yacht.name%></h5>
+          <p class="card-text"><%= yacht.price_per_day%></p>
+          <p class="card-text"><%= yacht.size%></p>
+          <a href="#" class="btn btn-primary">Ajouter</a>
+        </div>
+      </div>
     <% end %>
-  </div>
 </div>
